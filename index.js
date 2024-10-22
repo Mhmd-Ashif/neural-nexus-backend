@@ -36,7 +36,7 @@ mongoose
 // Routes
 app.use("/api/students", studentRoutes);
 app.use("/api/admin", adminRoutes); // Added admin routes
-app.get("/cron",function(req,res)=>{
+app.use("/cron",async function(req,res)=>{
   return res.text("App Waked");
 })
 
