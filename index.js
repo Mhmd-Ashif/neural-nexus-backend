@@ -36,10 +36,13 @@ mongoose
 // Routes
 app.use("/api/students", studentRoutes);
 app.use("/api/admin", adminRoutes); // Added admin routes
-app.use("/cron",async function(req,res)=>{
-  return res.text("App Waked");
-})
-
+app.use("/cron", async function (req, res) {
+  try {
+    res.send("App Waked");
+  } catch (error) {
+    res.status(500).send("An error occurred");
+  }
+});
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
