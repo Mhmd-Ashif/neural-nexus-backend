@@ -36,6 +36,9 @@ mongoose
 // Routes
 app.use("/api/students", studentRoutes);
 app.use("/api/admin", adminRoutes); // Added admin routes
+app.get("/cron",function(req,res)=>{
+  return res.text("App Waked");
+})
 
 // Start the server
 const PORT = process.env.PORT || 3000;
